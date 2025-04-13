@@ -12,4 +12,9 @@ class TaskController extends Controller
         $tasks = Task::latest()->paginate(5);
         return view('tasks.index',['tasks' =>$tasks ]);
     }
+
+    public function show(Task $task)
+    {
+        return view('tasks.show',['task' =>$task ]);
+    }
 }
