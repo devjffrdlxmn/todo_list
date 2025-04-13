@@ -17,4 +17,8 @@ class TaskController extends Controller
     {
         return view('tasks.show',['task' =>$task ]);
     }
+    public function create ()
+    {
+        return view('tasks.create');
+    }
 }
