@@ -10,14 +10,24 @@
         </p>
         </div>
         <div class="px-4 pb-4 pt-0 mt-2 flex justify-between">
-            <button class="rounded-md bg-red-700 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
-            Delete    
-            </button>
-            <button class="rounded-md bg-green-700 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+           
+            <form action="POST" action="/tasks/{{ $task->id }}">
+                @csrf
+                @method('Delete')
+                <button  type="submit" aria-activedescendant=""class="rounded-md bg-red-700 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                    Delete    
+                </button>
+            </form>
+
+       
+            <a href="/tasks/{{$task->id}}/edit" class="rounded-md bg-green-700 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
             edit    
-            </button>
-git
+            </a>
         </div>
+
+ 
+
+
   </div>  
 
 
